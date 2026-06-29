@@ -1,95 +1,70 @@
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Star } from "lucide-react";
 
 const testimonials = [
   {
     name: "Raymond K",
     image: "https://i.pravatar.cc/100?img=12",
-    text: `I Absolutely Love These Clothes! The Designs
-Are So Unique And Trendy, And The Quality Feels
-Premium. Every Time I Wear Them, I Get
-Compliments. Definitely My Go-To Brand For
-Streetwear!`,
+    text: "I Absolutely Love These Clothes! The Designs Are So Unique And Trendy, And The Quality Feels Premium. Every Time I Wear Them, I Get Compliments. Definitely My Go-To Brand For Streetwear!",
   },
   {
     name: "Jamal R",
     image: "https://i.pravatar.cc/100?img=32",
-    text: `Hands Down One Of The Best Fashion Lines I’ve
-Tried. The Fit Is Perfect, The Materials Are
-Comfortable, And The Style Really Stands Out.
-You Can Tell A Lot Of Thought Goes Into Every
-Piece`,
+    text: "Hands Down One Of The Best Fashion Lines I've Tried. The Fit Is Perfect, The Materials Are Comfortable, And The Style Really Stands Out. You Can Tell A Lot Of Thought Goes Into Every Piece.",
   },
   {
     name: "Emily D",
     image: "https://i.pravatar.cc/100?img=47",
-    text: `I’m Obsessed! From The Colors To The Patterns,
-Everything Is On Point. It’s Clear This Brand
-Knows How To Balance Fashion With Comfort.
-I’ve Already Recommended It To All My Friends!`,
+    text: "I'm Obsessed! From The Colors To The Patterns, Everything Is On Point. It's Clear This Brand Knows How To Balance Fashion With Comfort. I've Already Recommended It To All My Friends!",
   },
 ];
 
 export default function TestimonialsSection() {
   return (
-    <section className="w-full bg-white py-24">
-      <div className="max-w-7xl mx-auto px-20">
-
-        {/* Header */}
-        <div className="flex items-start justify-between">
+    <section className="w-full bg-white py-16 sm:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-12 xl:px-20">
+        <div className="flex flex-col items-start gap-6 sm:flex-row sm:justify-between">
           <div className="max-w-xl">
-            <h2 className="text-4xl font-rubik font-semibold text-black">
+            <h2 className="font-rubik text-3xl font-semibold leading-tight text-black sm:text-4xl">
               Fashion That Speaks For Itself
             </h2>
 
-            <p className="mt-4 text-sm text-gray-700 leading-relaxed">
-              Discover Fashion That Goes Beyond Trends—Pieces Designed
-              To Express Your Personality, Elevate Your Everyday Style,
-              And Make A Statement Wherever You Go
+            <p className="mt-4 text-sm leading-relaxed text-gray-700">
+              Discover Fashion That Goes Beyond Trends - Pieces Designed To
+              Express Your Personality, Elevate Your Everyday Style, And Make A
+              Statement Wherever You Go
             </p>
           </div>
 
-          <button className="flex items-center gap-2 border border-gray-300 rounded-full px-5 py-2 text-sm font-medium text-black hover:bg-gray-100 transition">
+          <button className="flex items-center gap-2 rounded-full border border-gray-300 px-5 py-2 text-sm font-medium text-black transition hover:bg-gray-100">
             See All
-            <ArrowUpRight className="w-4 h-4" />
+            <ArrowUpRight className="h-4 w-4" />
           </button>
         </div>
 
-        {/* Cards */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
-
-          {testimonials.map((item, index) => (
+        <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-16 md:grid-cols-3 md:gap-8">
+          {testimonials.map((item) => (
             <div
-              key={index}
-              className="border border-gray-400 bg-[rgb(232,234,234)] p-4"
+              key={item.name}
+              className="flex min-h-72 flex-col rounded-2xl border border-gray-300 bg-[rgb(232,234,234)] p-5 shadow-sm"
             >
-              {/* Stars */}
-              <div className="flex gap-1 mb-4">
+              <div className="mb-4 flex gap-1">
                 {Array.from({ length: 5 }).map((_, i) => (
-                  <span key={i} className="text-yellow-400 text-xl">
-                    ★
-                  </span>
+                  <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
                 ))}
               </div>
 
-              {/* Text */}
-              <p className="text-sm text-black leading-relaxed whitespace-pre-line">
-                {item.text}
-              </p>
+              <p className="text-sm leading-relaxed text-black">{item.text}</p>
 
-              {/* User */}
-              <div className="mt-8 flex items-center gap-4">
+              <div className="mt-auto flex items-center gap-4 pt-8">
                 <img
                   src={item.image}
                   alt={item.name}
-                  className="w-12 h-12 rounded-full object-cover"
+                  className="h-12 w-12 rounded-full object-cover"
                 />
-                <span className="text-sm font-semibold text-black">
-                  {item.name}
-                </span>
+                <span className="text-sm font-semibold text-black">{item.name}</span>
               </div>
             </div>
           ))}
-
         </div>
       </div>
     </section>
