@@ -2,29 +2,43 @@ import CategoriesSection from "../Components/CategorySection";
 import Footer from "../Components/Footer";
 import Header from "../Components/Header";
 import HeroSection from "../Components/HeroSection";
-import OfferHero from "../Components/OfferHero";
+import ProductShowcase from "../Components/ProductShowcase";
 import SeasonalCollection from "../Components/SeasonalCollection";
 import RotatingBanner from "../Components/SlidingBanner";
 import SlidingBannerTwo from "../Components/SlidingBannerTwo";
 import TestimonialsSection from "../Components/TestimonialSection";
-import TrustBar from "../Components/TrustBar";
-
+import SectionReveal from "../Components/SectionReveal";
 
 const HomePage = () => {
-    return (
-        <>
-        <Header/>
-        <HeroSection/>
-        <TrustBar/>
-        <CategoriesSection/>
-        <OfferHero/>
-        <RotatingBanner/>
-        <SeasonalCollection/>
-        <SlidingBannerTwo/>
-        <TestimonialsSection/>
-        <Footer/>
-        </>
-    );
-}
+  return (
+    <>
+      <Header />
+      <SectionReveal>
+        <HeroSection />
+      </SectionReveal>
+      <SectionReveal>
+        <ProductShowcase />
+      </SectionReveal>
+      <SectionReveal>
+        <CategoriesSection />
+      </SectionReveal>
+      <SectionReveal>
+        <RotatingBanner />
+      </SectionReveal>
+      <SectionReveal>
+        <SeasonalCollection />
+      </SectionReveal>
+      <SectionReveal>
+        <SlidingBannerTwo />
+      </SectionReveal>
+      <SectionReveal>
+        <TestimonialsSection />
+      </SectionReveal>
+      <SectionReveal>
+        <Footer />
+      </SectionReveal>
+    </>
+  );
+};
 
 export default HomePage;

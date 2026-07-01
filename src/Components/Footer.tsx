@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-12 xl:px-20">
         <div className="grid grid-cols-2 gap-x-6 gap-y-12 md:grid-cols-4 md:gap-16">
           <div className="col-span-2 md:col-span-1">
-            <h3 className="text-lg font-semibold tracking-wide">URBNMIND</h3>
+            <h3 className="text-lg font-semibold tracking-wide">CREST</h3>
 
             <p className="mt-6 text-sm font-medium">
               Stay Connected. Stay Stylish.

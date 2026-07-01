@@ -1,13 +1,13 @@
-import img1 from "../assets/collection-1.jpg";
-import img2 from "../assets/collection-2.jpg";
+import img1 from "../assets/collection-1.jpeg";
+import img2 from "../assets/collection-2.jpeg";
 
 const collections = [
   {
-    title: "COOPERATE",
+    title: "Black",
     image: img1,
   },
   {
-    title: "STREET WEAR",
+    title: "White",
     image: img2,
   },
 ];

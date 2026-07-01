@@ -1,6 +1,6 @@
-import img1 from "../assets/img-1.jpg";
-import img2 from "../assets/img-2.jpg";
-import img3 from "../assets/img-3.jpg";
+import img1 from "../assets/img-1.jpeg";
+import img2 from "../assets/img-2.jpeg";
+import img3 from "../assets/img-3.jpeg";
 import { RefreshCcw, ThumbsUp, Truck } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -16,7 +16,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <h1 className="font-rubik text-5xl font-normal leading-[1.05] text-black sm:text-6xl lg:text-[60px] lg:leading-[1.2]">
-              Define Your <br /> Style
+              CREST IS  <br /> DIVINE
             </h1>
 
             <motion.p
@@ -57,7 +57,7 @@ export default function HeroSection() {
                 },
               }}
             >
-              {[RefreshCcw, ThumbsUp, Truck].map((Icon, i) => (
+              {/* {[RefreshCcw, ThumbsUp, Truck].map((Icon, i) => (
                 <motion.div
                   key={i}
                   className="flex min-h-24 flex-col items-center justify-center gap-2 rounded-2xl bg-gray-100 px-2 py-4 lg:min-h-0 lg:bg-transparent lg:p-0"
@@ -67,37 +67,16 @@ export default function HeroSection() {
                   }}
                 >
                   <Icon className="h-5 w-5" />
-                  <span className="text-center">
-                    {i === 0 && (
-                      <>
-                        Hassle-Free
-                        <br />
-                        Returns
-                      </>
-                    )}
-                    {i === 1 && (
-                      <>
-                        100% Cotton
-                        <br />
-                        Made In China
-                      </>
-                    )}
-                    {i === 2 && (
-                      <>
-                        Free
-                        <br />
-                        Shipping
-                      </>
-                    )}
-                  </span>
                 </motion.div>
-              ))}
+              ))} */}
             </motion.div>
           </motion.div>
 
-          <div className="relative mx-auto h-[410px] w-full max-w-[560px] sm:h-[540px] lg:h-[620px]">
+          {/* RIGHT SIDE — cascading image layout */}
+          <div className="relative mx-auto h-[480px] w-full max-w-[420px] sm:h-[620px] sm:max-w-[480px] lg:h-[700px] lg:max-w-[560px]">
+            {/* Image 1 - top left */}
             <motion.div
-              className="absolute left-[2%] top-8 h-[250px] w-[32%] overflow-hidden rounded-full shadow-lg sm:top-10 sm:h-[360px] lg:h-[380px]"
+              className="absolute left-0 top-0 z-0 h-[55%] w-[34%] overflow-hidden rounded-full shadow-lg"
               initial={{ opacity: 0, x: -40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
@@ -105,8 +84,9 @@ export default function HeroSection() {
               <img src={img1} alt="Model" className="h-full w-full object-cover" />
             </motion.div>
 
+            {/* Image 2 - middle, overlapping image 1 */}
             <motion.div
-              className="absolute left-1/2 top-16 z-10 h-[290px] w-[36%] -translate-x-1/2 overflow-hidden rounded-full shadow-xl sm:top-24 sm:h-[420px]"
+              className="absolute left-[26%] top-[18%] z-10 h-[62%] w-[36%] overflow-hidden rounded-full shadow-xl"
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
@@ -114,8 +94,9 @@ export default function HeroSection() {
               <img src={img2} alt="Model" className="h-full w-full object-cover" />
             </motion.div>
 
+            {/* Image 3 - bottom right, overlapping image 2 */}
             <motion.div
-              className="absolute right-[2%] top-32 h-[250px] w-[32%] overflow-hidden rounded-full shadow-lg sm:top-44 sm:h-[360px] lg:h-[380px]"
+              className="absolute right-0 top-[38%] z-20 h-[58%] w-[34%] overflow-hidden rounded-full shadow-lg"
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
@@ -123,34 +104,55 @@ export default function HeroSection() {
               <img src={img3} alt="Model" className="h-full w-full object-cover" />
             </motion.div>
 
+            {/* Badge - 100% Satisfaction Guaranteed (top, floating) */}
             <motion.div
-              className="absolute left-1/2 top-3 z-20 flex -translate-x-1/2 items-center gap-2 rounded-xl bg-white px-4 py-3 text-xs font-medium shadow-md sm:top-12 sm:text-sm"
+              className="absolute left-[28%] top-[5%] z-30"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.6 }}
+              transition={{ delay: 0.6, duration: 0.6 }}
             >
-              <span className="font-bold">100%</span>
-              <span>Satisfaction Guaranteed</span>
+              <motion.div
+                className="flex items-center gap-2 rounded-xl bg-white px-4 py-3 text-xs font-medium shadow-md sm:text-sm"
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <span className="font-bold">100%</span>
+                <span>Satisfaction Guaranteed</span>
+              </motion.div>
             </motion.div>
 
+            {/* Badge - Limited Edition Designs (bottom left, floating) */}
             <motion.div
-              className="absolute bottom-20 left-0 z-20 flex max-w-[190px] gap-2 rounded-xl bg-white px-4 py-3 text-xs font-medium shadow-md sm:bottom-28 sm:text-sm"
+              className="absolute bottom-[16%] left-0 z-30"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.8 }}
+              transition={{ delay: 0.8, duration: 0.6 }}
             >
-              <span className="text-lg">"</span>
-              <span>Limited Edition Designs</span>
+              <motion.div
+                className="flex max-w-[190px] gap-2 rounded-xl bg-white px-4 py-3 text-xs font-medium shadow-md sm:text-sm"
+                animate={{ y: [0, 10, 0] }}
+                transition={{ duration: 3.6, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
+              >
+                <span className="text-lg">"</span>
+                <span>Limited Edition Designs</span>
+              </motion.div>
             </motion.div>
 
+            {/* Badge - Designed For Self Expression (bottom, floating) */}
             <motion.div
-              className="absolute bottom-2 right-2 z-20 flex max-w-[220px] gap-2 rounded-xl bg-white px-4 py-3 text-xs font-medium shadow-md sm:bottom-6 sm:right-16 sm:text-sm"
+              className="absolute bottom-0 left-[16%] z-30"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1 }}
+              transition={{ delay: 1, duration: 0.6 }}
             >
-              <span className="text-lg">"</span>
-              <span>Designed For Self Expression</span>
+              <motion.div
+                className="flex max-w-[220px] gap-2 rounded-xl bg-white px-4 py-3 text-xs font-medium shadow-md sm:text-sm"
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 3.4, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
+              >
+                <span className="text-lg">"</span>
+                <span>Designed For Self Expression</span>
+              </motion.div>
             </motion.div>
           </div>
         </div>

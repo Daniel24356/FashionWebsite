@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Heart, Menu, Search, ShoppingCart, X } from "lucide-react";
+import logo from "../assets/logo.jpeg"
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,8 +10,10 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-black/5 bg-white/90 backdrop-blur-xl">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-12 xl:px-20">
         <div className="flex h-16 items-center justify-between md:h-20">
-          <div className="text-lg font-bold tracking-wide sm:text-xl">
-            URBNMIND
+          
+          <div className=" flex items-center text-lg font-bold tracking-wide sm:text-xl">
+            <img className="w-12" src={logo} alt="" />
+            CREST
           </div>
 
           <nav className="hidden items-center gap-10 text-sm font-medium md:flex">

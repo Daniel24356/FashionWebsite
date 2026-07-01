@@ -1,24 +1,20 @@
-import cat1 from "../assets/cat-1.jpg";
-import cat2 from "../assets/cat-2.jpg";
-import cat3 from "../assets/cat-3.jpg";
-import cat4 from "../assets/cat-4.jpg";
+import cat1 from "../assets/cat-1.jpeg";
+import cat2 from "../assets/cat-2.jpeg";
+import cat3 from "../assets/cat-3.jpeg";
+import SectionReveal from "./SectionReveal";
 
 const categories = [
   {
-    title: "GIRLS",
+    title: "Beatiful Mistake",
     image: cat1,
   },
   {
-    title: "MEN",
+    title: "Live Free White",
     image: cat2,
   },
   {
-    title: "WOMEN",
+    title: "Live Free Black",
     image: cat3,
-  },
-  {
-    title: "BOY",
-    image: cat4,
   },
 ];
 
@@ -26,22 +22,21 @@ export default function CategoriesSection() {
   return (
     <section className="w-full bg-white py-14 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-12 xl:px-20">
-        <div className="mb-10 text-center sm:mb-14">
+        <SectionReveal className="mb-10 text-center sm:mb-14" delay={0.08}>
           <h2 className="font-rubik text-3xl font-semibold text-black sm:text-4xl md:text-5xl">
             Categories
           </h2>
           <p className="mx-auto mt-4 max-w-lg text-sm font-rubik leading-6 text-gray-600 md:text-base">
             From Everyday Essentials To Statement Pieces - Find Your Fit.
           </p>
-        </div>
+        </SectionReveal>
 
         <div className="grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-4 lg:gap-8">
           {categories.map((category, index) => (
-            <div
+            <SectionReveal
               key={category.title}
-              className={`group relative overflow-hidden rounded-2xl ${
-                index === 0 ? "col-span-2 sm:col-span-1" : ""
-              }`}
+              className={`group relative overflow-hidden rounded-2xl ${index === 0 ? "col-span-2 sm:col-span-1" : ""}`}
+              delay={index * 0.08}
             >
               <img
                 src={category.image}
@@ -54,7 +49,7 @@ export default function CategoriesSection() {
                   {category.title}
                 </span>
               </div>
-            </div>
+            </SectionReveal>
           ))}
         </div>
       </div>

@@ -1,4 +1,7 @@
-import { ArrowUpRight, Star } from "lucide-react";
+import { useState } from "react";
+import { ArrowUpRight, ChevronLeft, ChevronRight, Star } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import SectionReveal from "./SectionReveal";
 
 const testimonials = [
   {
@@ -19,10 +22,20 @@ const testimonials = [
 ];
 
 export default function TestimonialsSection() {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handlePrev = () => {
+    setActiveIndex((current) => (current === 0 ? testimonials.length - 1 : current - 1));
+  };
+
+  const handleNext = () => {
+    setActiveIndex((current) => (current === testimonials.length - 1 ? 0 : current + 1));
+  };
+
   return (
     <section className="w-full bg-white py-16 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-12 xl:px-20">
-        <div className="flex flex-col items-start gap-6 sm:flex-row sm:justify-between">
+        <SectionReveal className="flex flex-col items-start gap-6 sm:flex-row sm:justify-between" delay={0.08}>
           <div className="max-w-xl">
             <h2 className="font-rubik text-3xl font-semibold leading-tight text-black sm:text-4xl">
               Fashion That Speaks For Itself
@@ -39,33 +52,64 @@ export default function TestimonialsSection() {
             See All
             <ArrowUpRight className="h-4 w-4" />
           </button>
-        </div>
+        </SectionReveal>
 
-        <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-16 md:grid-cols-3 md:gap-8">
-          {testimonials.map((item) => (
-            <div
-              key={item.name}
-              className="flex min-h-72 flex-col rounded-2xl border border-gray-300 bg-[rgb(232,234,234)] p-5 shadow-sm"
+        <SectionReveal className="mt-10 sm:mt-16" delay={0.16}>
+          <div className="mb-4 flex items-center justify-end gap-2 sm:mb-6">
+            <button
+              type="button"
+              aria-label="Previous testimonial"
+              onClick={handlePrev}
+              className="grid h-10 w-10 place-items-center rounded-full border border-gray-300 bg-white text-black transition hover:bg-gray-100"
             >
-              <div className="mb-4 flex gap-1">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                ))}
-              </div>
+              <ChevronLeft className="h-5 w-5" />
+            </button>
+            <button
+              type="button"
+              aria-label="Next testimonial"
+              onClick={handleNext}
+              className="grid h-10 w-10 place-items-center rounded-full border border-gray-300 bg-black text-white transition hover:bg-gray-800"
+            >
+              <ChevronRight className="h-5 w-5" />
+            </button>
+          </div>
 
-              <p className="text-sm leading-relaxed text-black">{item.text}</p>
+          <div className="overflow-hidden rounded-[28px]">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={testimonials[activeIndex].name}
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -30 }}
+                transition={{ duration: 0.35, ease: "easeOut" }}
+                className="w-full"
+              >
+                <div className="flex min-h-[320px] flex-col rounded-[28px] border border-gray-300 bg-[rgb(232,234,234)] p-6 shadow-sm sm:p-8 lg:p-10">
+                  <div className="mb-4 flex gap-1">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                    ))}
+                  </div>
 
-              <div className="mt-auto flex items-center gap-4 pt-8">
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  className="h-12 w-12 rounded-full object-cover"
-                />
-                <span className="text-sm font-semibold text-black">{item.name}</span>
-              </div>
-            </div>
-          ))}
-        </div>
+                  <p className="text-sm leading-relaxed text-black sm:text-base">
+                    {testimonials[activeIndex].text}
+                  </p>
+
+                  <div className="mt-auto flex items-center gap-4 pt-8">
+                    <img
+                      src={testimonials[activeIndex].image}
+                      alt={testimonials[activeIndex].name}
+                      className="h-12 w-12 rounded-full object-cover"
+                    />
+                    <span className="text-sm font-semibold text-black">
+                      {testimonials[activeIndex].name}
+                    </span>
+                  </div>
+                </div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+        </SectionReveal>
       </div>
     </section>
   );
