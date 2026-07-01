@@ -1,7 +1,7 @@
 import img1 from "../assets/img-1.jpeg";
 import img2 from "../assets/img-2.jpeg";
 import img3 from "../assets/img-3.jpeg";
-import { RefreshCcw, ThumbsUp, Truck } from "lucide-react";
+// import { RefreshCcw, ThumbsUp, Truck } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function HeroSection() {
