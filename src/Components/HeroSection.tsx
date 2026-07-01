@@ -8,7 +8,7 @@ export default function HeroSection() {
   return (
     <section className="w-full overflow-hidden bg-white">
       <div className="mx-auto max-w-7xl px-4 pb-12 pt-8 sm:px-6 sm:pb-16 lg:px-12 lg:py-10 xl:px-20">
-        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16">
+        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16 mt-3">
           <motion.div
             className="text-center lg:text-left"
             initial={{ opacity: 0, y: 40 }}
@@ -45,7 +45,7 @@ export default function HeroSection() {
             </motion.div>
 
             <motion.div
-              className="mx-auto mt-10 grid max-w-md grid-cols-3 gap-3 text-xs text-gray-800 sm:mt-14 sm:text-sm lg:mx-0 lg:flex lg:items-center lg:gap-14"
+              className="mx-auto mt-3 grid max-w-md grid-cols-3 gap-3 text-xs text-gray-800 sm:mt-14 sm:text-sm lg:mx-0 lg:flex lg:items-center lg:gap-14"
               initial="hidden"
               animate="visible"
               variants={{
