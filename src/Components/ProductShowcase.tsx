@@ -8,10 +8,10 @@ import img1 from "../assets/img-1.jpeg";
 
 const products = [
   {
-    title: "Urban Drift Jacket",
+    title: "CREST BEAUTIFUL MISTAKES KNITT POLO",
     tag: "Featured drop",
-    price: "$128",
-    oldPrice: "$160",
+    price: "₦175,000",
+    oldPrice: "₦200, 000",
     description:
       "A lightweight shell designed for late-night city moves, soft structure, and everyday confidence.",
     image: cat1,
@@ -19,10 +19,10 @@ const products = [
     rating: 4.9,
   },
   {
-    title: "Sculpted Essentials Tee",
+    title: "CREST LIVE FREE TEE",
     tag: "Best seller",
-    price: "$54",
-    oldPrice: "$70",
+    price: "₦50,000",
+    oldPrice: "₦70,000",
     description:
       "Crafted cotton with a clean silhouette, premium finish, and unapologetic streetwear attitude.",
     image: cat2,
@@ -30,10 +30,10 @@ const products = [
     rating: 4.8,
   },
   {
-    title: "Midnight Utility Set",
+    title: "CREST LIVE FREE WHITE TEE",
     tag: "Studio edit",
-    price: "$92",
-    oldPrice: "$115",
+    price: "₦50,000",
+    oldPrice: "₦70,000",
     description:
       "Sharp lines, flexible comfort, and elevated layering for both day and evening wear.",
     image: cat3,
@@ -41,10 +41,10 @@ const products = [
     rating: 5.0,
   },
   {
-    title: "Signature Street Cap",
+    title: "CREST BEAUTIFUL MISTAKES",
     tag: "Accessory",
-    price: "$38",
-    oldPrice: "$48",
+    price: "₦175,000",
+    oldPrice: "₦200,000",
     description:
       "The finishing touch for your look with premium texture and a sculpted fit.",
     image: img1,

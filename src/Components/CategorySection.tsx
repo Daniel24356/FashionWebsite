@@ -5,15 +5,19 @@ import SectionReveal from "./SectionReveal";
 
 const categories = [
   {
-    title: "Beatiful Mistake",
+    title: "Beautiful Mistake",
     image: cat1,
   },
   {
-    title: "Live Free White",
+    title: "Live Free Black",
     image: cat2,
   },
   {
-    title: "Live Free Black",
+    title: "Live Free White",
+    image: cat3,
+  },
+  {
+    title: "Live Free White",
     image: cat3,
   },
 ];

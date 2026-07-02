@@ -7,7 +7,7 @@ export default function Header() {
   const navItems = ["HOME", "PRICING", "SHOPS", "CUSTOM WEARS", "CONTACT"];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-black/5 bg-white/90 backdrop-blur-xl">
+    <header className="relative sticky top-0 z-50 w-full border-b border-black/5 bg-white/90 backdrop-blur-xl">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-12 xl:px-20">
         <div className="flex h-16 items-center justify-between md:h-20">
           
@@ -61,7 +61,7 @@ export default function Header() {
       </div>
 
       {isOpen && (
-        <div className="border-t border-black/5 bg-white md:hidden">
+        <div className="absolute left-0 top-full w-full border-t border-black/5 bg-white md:hidden">
           <nav className="mx-auto grid max-w-7xl gap-1 px-4 py-4 text-sm font-semibold">
             {navItems.map((item) => (
               <a

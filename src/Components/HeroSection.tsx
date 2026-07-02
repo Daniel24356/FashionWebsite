@@ -1,7 +1,7 @@
 import img1 from "../assets/img-1.jpeg";
 import img2 from "../assets/img-2.jpeg";
 import img3 from "../assets/img-3.jpeg";
-// import { RefreshCcw, ThumbsUp, Truck } from "lucide-react";
+import { RefreshCcw, ThumbsUp, Truck } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function HeroSection() {
@@ -10,7 +10,7 @@ export default function HeroSection() {
       <div className="mx-auto max-w-7xl px-4 pb-12 pt-8 sm:px-6 sm:pb-16 lg:px-12 lg:py-10 xl:px-20">
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16 mt-3">
           <motion.div
-            className="text-center lg:text-left"
+            className="text-center lg:text-left lg:mt-24 lg:self-start"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
@@ -45,7 +45,7 @@ export default function HeroSection() {
             </motion.div>
 
             <motion.div
-              className="mx-auto mt-3 grid max-w-md grid-cols-3 gap-3 text-xs text-gray-800 sm:mt-14 sm:text-sm lg:mx-0 lg:flex lg:items-center lg:gap-14"
+              className="mt-16 hidden lg:flex items-center gap-14 text-sm text-gray-800 mx-auto max-w-md lg:mx-0"
               initial="hidden"
               animate="visible"
               variants={{
@@ -57,18 +57,41 @@ export default function HeroSection() {
                 },
               }}
             >
-              {/* {[RefreshCcw, ThumbsUp, Truck].map((Icon, i) => (
-                <motion.div
-                  key={i}
-                  className="flex min-h-24 flex-col items-center justify-center gap-2 rounded-2xl bg-gray-100 px-2 py-4 lg:min-h-0 lg:bg-transparent lg:p-0"
-                  variants={{
-                    hidden: { opacity: 0, y: 20 },
-                    visible: { opacity: 1, y: 0 },
-                  }}
-                >
-                  <Icon className="h-5 w-5" />
-                </motion.div>
-              ))} */}
+                {[RefreshCcw, ThumbsUp, Truck].map((Icon, i) => (
+                  <motion.div
+                    key={i}
+                    className="flex flex-col items-center gap-2"
+                    variants={{
+                      hidden: { opacity: 0, y: 20 },
+                      visible: { opacity: 1, y: 0 },
+                    }}
+                  >
+                    <Icon className="w-5 h-5" />
+                    <span className="text-center">
+                      {i === 0 && (
+                        <>
+                          Hassle-Free
+                          <br />
+                          Returns
+                        </>
+                      )}
+                      {i === 1 && (
+                        <>
+                          100% Cotton
+                          <br />
+                          Made In China
+                        </>
+                      )}
+                      {i === 2 && (
+                        <>
+                          Free
+                          <br />
+                          Shipping
+                        </>
+                      )}
+                    </span>
+                  </motion.div>
+                ))}
             </motion.div>
           </motion.div>
 
@@ -86,7 +109,7 @@ export default function HeroSection() {
 
             {/* Image 2 - middle, overlapping image 1 */}
             <motion.div
-              className="absolute left-[26%] top-[18%] z-10 h-[62%] w-[36%] overflow-hidden rounded-full shadow-xl"
+              className="absolute left-[31%] top-[18%] z-10 h-[55%] w-[36%] overflow-hidden rounded-full shadow-xl"
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
@@ -96,7 +119,7 @@ export default function HeroSection() {
 
             {/* Image 3 - bottom right, overlapping image 2 */}
             <motion.div
-              className="absolute right-0 top-[38%] z-20 h-[58%] w-[34%] overflow-hidden rounded-full shadow-lg"
+              className="absolute right-2 top-[35%] z-20 h-[55%] w-[34%] overflow-hidden rounded-full shadow-lg"
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
@@ -123,7 +146,7 @@ export default function HeroSection() {
 
             {/* Badge - Limited Edition Designs (bottom left, floating) */}
             <motion.div
-              className="absolute bottom-[16%] left-0 z-30"
+              className="absolute bottom-[27%] left-[5%] z-30"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.8, duration: 0.6 }}
@@ -134,13 +157,13 @@ export default function HeroSection() {
                 transition={{ duration: 3.6, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
               >
                 <span className="text-lg">"</span>
-                <span>Limited Edition Designs</span>
+                <span className="whitespace-nowrap">Limited Edition Designs</span>
               </motion.div>
             </motion.div>
 
             {/* Badge - Designed For Self Expression (bottom, floating) */}
             <motion.div
-              className="absolute bottom-0 left-[16%] z-30"
+              className="absolute bottom-[10%] left-[32%] z-30"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1, duration: 0.6 }}
@@ -151,7 +174,7 @@ export default function HeroSection() {
                 transition={{ duration: 3.4, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
               >
                 <span className="text-lg">"</span>
-                <span>Designed For Self Expression</span>
+                <span className="whitespace-nowrap">Designed For Self Expression</span>
               </motion.div>
             </motion.div>
           </div>
